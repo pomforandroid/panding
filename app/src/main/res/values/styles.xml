@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="checkboxStyle">@style/MyCheckboxStyle</item>
+
+    </style>
+
+    <style name="ThemeSplash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@drawable/bg_splash</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="firststyle">
+        <item name="android:background">@drawable/first_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="secondstyle">
+        <item name="android:background">@drawable/second_bg</item>
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="firststyle_radius">
+        <item name="android:background">@drawable/first_radius_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="MyCheckboxStyle" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check_bg</item>
+    </style>
+</resources>

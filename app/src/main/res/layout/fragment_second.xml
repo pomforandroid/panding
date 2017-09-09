@@ -1,0 +1,31 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.panding.main.pdservice.fragment.SecondFragment">
+
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第二个fragment" />
+
+    <Button
+        android:id="@+id/bt_pre"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="left"
+        android:text="退栈"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_marginTop="48dp"
+        android:layout_gravity="right"
+        android:text="点击看下一个fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>

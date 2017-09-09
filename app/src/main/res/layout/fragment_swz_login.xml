@@ -1,0 +1,85 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.panding.main.swzgps.fragment.SwzLoginFragment">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/home_bg1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="56dp"
+        android:textSize="14sp"
+        app:met_iconLeft="@drawable/username"
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机号码 设备号"
+        app:met_baseColor="@color/colorAccent"
+        app:met_clearButton="true"
+        app:met_iconPadding="0dp"
+        app:met_textColorHint="@color/colorAccent"
+        app:met_primaryColor="@color/colorPrimary" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginRight="56dp"
+            android:textSize="14sp"
+            app:met_iconLeft="@drawable/password"
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="手机号码 设备号"
+            app:met_baseColor="@color/colorAccent"
+            app:met_clearButton="true"
+            app:met_iconPadding="0dp"
+            app:met_textColorHint="@color/colorAccent"
+            app:met_primaryColor="@color/colorPrimary" />
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginRight="56dp"
+                android:layout_gravity="bottom|right"
+                android:text="忘记密码"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+       </LinearLayout>
+
+       <Button
+           style="@style/firststyle"
+           android:text="登录"
+           android:layout_marginTop="16dp"
+           android:layout_marginLeft="16dp"
+           android:layout_marginRight="16dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+
+        <Button
+            style="@style/secondstyle"
+            android:text="注册"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</FrameLayout>

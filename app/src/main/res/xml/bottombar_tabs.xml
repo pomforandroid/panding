@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/navigation_gps"
+        icon="@drawable/menu_carclub"
+        title="Favorites" />
+    <tab
+        id="@+id/navigation_home"
+        icon="@drawable/menu_carclub"
+        title="Nearby" />
+    <tab
+        activeColor="#00000000"
+        id="@+id/navigation_carclub"
+        icon="@drawable/lion_head"
+        title="车友会" />
+
+    <tab
+        id="@+id/navigation_account"
+        icon="@drawable/menu_carclub"
+        title="Friends" />
+</tabs>

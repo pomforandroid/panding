@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">掌上磐鼎</string>
+    <string name="title_gps">GPS</string>
+    <string name="title_home">磐鼎服务</string>
+    <string name="title_carclub">车友会</string>
+    <string name="title_account">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
