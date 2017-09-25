@@ -3,21 +3,28 @@ package com.panding.main.pdservice.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.panding.main.Base.BaseContentragment;
 import com.panding.main.R;
-import com.panding.main.perfecthttp.adapter.ServiceRecodAdapter;
+import com.panding.main.perfecthttp.PandingService;
+import com.panding.main.perfecthttp.PdPerfectHttp;
+import com.panding.main.perfecthttp.request.Req_pd_vip_get;
+import com.panding.main.perfecthttp.response.Pd_vip_get;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,17 +37,27 @@ public class ServiceRecordFragment extends BaseContentragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    @BindView(R.id.rv)
-    RecyclerView rv;
+    /*@BindView(R.id.rv)
+    RecyclerView rv;*/
     Unbinder unbinder;
+
+    @BindView(R.id.ll_commend)
+    LinearLayout llCommend;
     @BindView(R.id.tv_more)
     TextView tvMore;
+    @BindView(R.id.imageView3)
+    ImageView imageView3;
     @BindView(R.id.goback)
-    ImageView goback;
+    LinearLayout goback;
+    @BindView(R.id.tv_username)
+    TextView tvUsername;
+    @BindView(R.id.tv_vip_point)
+    TextView tvVipPoint;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Subscription subscribe;
 
 
     public ServiceRecordFragment() {
@@ -87,22 +104,67 @@ public class ServiceRecordFragment extends BaseContentragment {
                 popStack();
             }
         });
-        rv.setLayoutManager(new LinearLayoutManager(mActivity));
-        rv.setAdapter(new ServiceRecodAdapter());
-        tvMore.setOnClickListener(new View.OnClickListener() {
+        llCommend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 ServiceCommentFragment serviceCommentFragment = new ServiceCommentFragment();
                 pushStack(serviceCommentFragment);
             }
         });
+
+        initData();
+        /*rv.setLayoutManager(new LinearLayoutManager(mActivity));
+        rv.setAdapter(new ServiceRecodAdapter());*/
         return view;
     }
 
+    private void initData() {
+        String pdPassword = getPDPassword();
+        String pdUsername = getPDUsername();
+        tvUsername.setText(pdUsername);
+
+        //会员信息参数
+        Req_pd_vip_get req_pd_vip_get = new Req_pd_vip_get();
+        req_pd_vip_get.setPassword(pdPassword);
+        req_pd_vip_get.setUsername(pdUsername);
+        String vipget_param = new Gson().toJson(req_pd_vip_get);
+
+        subscribe = PdPerfectHttp.createService(PandingService.class)
+                .pd_vip_get(vipget_param)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Pd_vip_get>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(Pd_vip_get pd_vip_get) {
+                        if (pd_vip_get.getErrcode() == 0) {
+                            tvVipPoint.setText(pd_vip_get.getUsePoint());
+                        }
+                    }
+                });
+    }
+    private void stopInitData(){
+        if (subscribe != null) {
+            if (subscribe != null) {
+                if (!subscribe.isUnsubscribed()) {
+                    subscribe.unsubscribe();
+                }
+            }
+        }
+    }
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        stopInitData();
         unbinder.unbind();
     }
 }

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/secondstyle"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="刷新"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_10s"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10s" />
+
+        <ImageView
+            android:id="@+id/iv_10s"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/check" />
+
+        <View
+            android:layout_marginTop="4dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/iv_10s"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            ></View>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_20s"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20s" />
+
+        <ImageView
+            android:id="@+id/iv_20s"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/check" />
+        <View
+            android:layout_marginTop="4dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/iv_20s"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            ></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_30s"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="30s" />
+
+        <ImageView
+            android:id="@+id/iv_30s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/check"
+           />
+        <View
+            android:layout_marginTop="4dp"
+            android:background="@color/colorAccent"
+            android:layout_below="@id/iv_30s"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            ></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_close"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭自动刷新" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/check" />
+
+    </RelativeLayout>
+</LinearLayout>

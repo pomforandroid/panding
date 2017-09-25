@@ -3,11 +3,13 @@
     <color name="colorPrimary">#ff7f11</color>
     <color name="colorPrimaryDark">#fe5200</color>
     <color name="colorAccent">#BBBBBB</color>
-    <color name="pdblue">#1296db</color>
+    <color name="pdblue">#1c5572</color>
     <color name="pdgreen">#1afa29</color>
     <color name="white">#FFFFFFFF</color>
     <color name="tpcardbg">#33fa9006</color>
     <color name="divisionline">#dedfe0</color>
     <color name="itembg">#f3f3f3</color>
+    <color name="transparent">@android:color/transparent</color>
+
 
 </resources>

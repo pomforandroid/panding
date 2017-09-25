@@ -79,10 +79,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
+                                android:id="@+id/tv_username"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="粤J88888"
                                 android:textSize="16sp" />
 
                             <ImageView
@@ -110,11 +110,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/textView"
+                                android:id="@+id/tv_vip_point"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="2300"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -135,9 +134,9 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -147,12 +146,22 @@
                     android:layout_weight="1"
                     android:gravity="center">
 
-                    <TextView
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="保险信息" />
+                        android:layout_marginLeft="24dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/insuranceinfo" />
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/divisionline"></View>
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -173,10 +182,10 @@
                             android:textColor="@color/pdblue" />
 
                         <TextView
+                            android:id="@+id/tv_baoxiaostart"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="2017年12月01日(周日)"
                             android:textSize="10sp" />
                     </LinearLayout>
 
@@ -195,7 +204,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
-                            android:text="2017年12月01日(周日)"
+                            android:id="@+id/tv_baoxianend"
                             android:textSize="10sp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -203,11 +212,16 @@
 
             </LinearLayout>
 
-            <TextView
-                style="@style/firststyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="我的保险信息" />
+            <LinearLayout
+                android:background="@drawable/shape_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></LinearLayout>
+
+           <ImageView
+               android:adjustViewBounds="true"
+               android:src="@drawable/myinsuranceinfo"
+               android:layout_width="wrap_content"
+               android:layout_height="36dp" />
 
 
             <LinearLayout
@@ -229,10 +243,12 @@
                         android:text="保单号" />
 
                     <TextView
+                        android:textSize="10sp"
+                        android:id="@+id/tv_baodanhao"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="WS1234567" />
+                         />
                 </LinearLayout>
 
                 <View
@@ -280,7 +296,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="中国人保" />
+                        android:id="@+id/tv_company" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -305,11 +321,11 @@
                     android:src="@drawable/pdlionhead" />
 
                 <TextView
-                    android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="您的车辆保险即将到期，我们建议你尽快续保" />
+                    android:text="您的车辆保险即将到期，我们建议你尽快续保"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -333,11 +349,13 @@
                     android:orientation="vertical">
 
                     <CheckBox
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="总保费" />
 
                     <CheckBox
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="交强险" />
@@ -351,11 +369,13 @@
                     android:orientation="vertical">
 
                     <CheckBox
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="商业险" />
 
                     <CheckBox
+                        android:checked="true"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="车船税" />
@@ -366,75 +386,184 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="车损"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXX" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
+                    <TextView
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/point"
+                        android:gravity="center_vertical"
+                        android:text="三者100万" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="盗抢"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="司机(1万/座)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXX" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
+                    <TextView
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/point"
+                        android:gravity="center_vertical"
+                        android:text="乘客(1万/座)" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="玻璃(国产玻璃)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="划痕(2000元)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/point"
+                        android:gravity="center_vertical"
+                        android:text="自燃" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="车损无法找到第三方"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="10sp"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/point"
+                        android:text="不计免赔(车损/三者/盗抢/司乘/车身划痕损失险/自燃损失险/车上人员责任保险(乘客))"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXX" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="XXX" />
             </LinearLayout>
 
             <LinearLayout
@@ -455,8 +584,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
-                        android:text="我是新用户，xxxx"
-                        android:textSize="12sp" />
+                        android:text="我是新用户，我要报价"
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -472,8 +601,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="18dp"
                         android:layout_marginRight="18dp"
-                        android:text="我是老用户，xxxx"
-                        android:textSize="12sp" />
+                        android:text="我是老用户，我要续保"
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 

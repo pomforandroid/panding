@@ -10,15 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:background="@drawable/shape_bg_toolbar"
+        <FrameLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
-
+            android:layout_weight="1789"
+            android:layout_height="0dp">
             <FrameLayout
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="48dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_marginLeft="8dp"
@@ -28,50 +28,98 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-
-            </FrameLayout>
-           <LinearLayout
-               android:gravity="center"
-               android:orientation="vertical"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
-
-               <ImageView
-                   android:src="@mipmap/ic_launcher"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/white"
-                    android:text="会员名称"
-                    android:textSize="18sp"
+                <ImageView
+                    android:layout_gravity="right"
+                    android:src="@drawable/message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-               <TextView
-                   android:layout_marginTop="10dp"
-                   android:text="车牌：粤J88888"
-                   android:textSize="16sp"
-                   android:textColor="@color/white"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content" />
+            </FrameLayout>
 
-           </LinearLayout>
-        </LinearLayout>
+                <LinearLayout
+                    android:background="@drawable/account_ware_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1409"
+                            >
+                        </LinearLayout>
+
+                        <ImageView
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/pdlion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="800"/>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1409">
+
+                            <!-- <ImageView
+                                 android:layout_marginBottom="4dp"
+                                 android:layout_gravity="bottom"
+                                 android:src="@drawable/goldvip"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content" />-->
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:text="会员名称"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+        </FrameLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="4247">
 
             <LinearLayout
+                android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="36dp">
 
-                <TextView
+                <ImageView
                     android:layout_marginLeft="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/home_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
                     android:text="设置"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -84,9 +132,18 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="36dp">
-
-                <TextView
+                <ImageView
                     android:layout_marginLeft="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/qustion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/home_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
                     android:text="常见问题"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -98,9 +155,18 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="36dp">
-
-                <TextView
+                <ImageView
                     android:layout_marginLeft="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/home_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
                     android:text="关于我们"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -112,9 +178,18 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="36dp">
-
-                <TextView
+                <ImageView
                     android:layout_marginLeft="16dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/useragree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/home_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
                     android:text="用户协议"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -126,26 +201,56 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="36dp">
-
-                <TextView
+                <ImageView
                     android:layout_marginLeft="16dp"
-                    android:text="版本更新"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/versionupdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:tint="@color/colorAccent"
+                    android:src="@drawable/home_more"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="版本更新" />
+
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="953"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"></LinearLayout>
+
+            <ImageButton
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:src="@drawable/btsos"
+                android:layout_weight="2200"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_weight="953"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"></LinearLayout>
+
+        </LinearLayout>
 
         </LinearLayout>
 
 
-            <Button
-                style="@style/firststyle"
-                android:layout_margin="48dp"
-                android:textSize="16sp"
-                android:text="紧急救援"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 

@@ -7,13 +7,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.panding.main.Base.BaseContentragment;
 import com.panding.main.R;
+import com.panding.main.perfecthttp.PandingService;
+import com.panding.main.perfecthttp.PdPerfectHttp;
+import com.panding.main.perfecthttp.request.Req_pd_baoxian_get;
+import com.panding.main.perfecthttp.request.Req_pd_remind_get;
+import com.panding.main.perfecthttp.request.Req_pd_vip_get;
+import com.panding.main.perfecthttp.response.Pd_baoxian_get;
+import com.panding.main.perfecthttp.response.Pd_remind_get;
+import com.panding.main.perfecthttp.response.Pd_vip_get;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,10 +44,23 @@ public class InsuranceFragment extends BaseContentragment {
     Unbinder unbinder;
     @BindView(R.id.goback)
     ImageView goback;
+    @BindView(R.id.tv_username)
+    TextView tvUsername;
+    @BindView(R.id.tv_vip_point)
+    TextView tvVipPoint;
+    @BindView(R.id.tv_baoxiaostart)
+    TextView tvBaoxiaostart;
+    @BindView(R.id.tv_baoxianend)
+    TextView tvBaoxianend;
+    @BindView(R.id.tv_baodanhao)
+    TextView tvBaodanhao;
+    @BindView(R.id.tv_company)
+    TextView tvCompany;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Subscription subscribe;
 
 
     public InsuranceFragment() {
@@ -78,12 +106,82 @@ public class InsuranceFragment extends BaseContentragment {
                 popStack();
             }
         });
+        initData();
         return view;
+    }
+
+    private void initData() {
+        String pdPassword = getPDPassword();
+        String pdUsername = getPDUsername();
+        tvUsername.setText(pdUsername);
+
+        //会员信息参数
+        Req_pd_vip_get req_pd_vip_get = new Req_pd_vip_get();
+        req_pd_vip_get.setPassword(pdPassword);
+        req_pd_vip_get.setUsername(pdUsername);
+        String vipget_param = new Gson().toJson(req_pd_vip_get);
+        //保险信息参数
+        Req_pd_baoxian_get req_pd_baoxian_get = new Req_pd_baoxian_get();
+        req_pd_baoxian_get.setPassword(pdPassword);
+        req_pd_baoxian_get.setUsername(pdUsername);
+        String baoxian_param = new Gson().toJson(req_pd_baoxian_get);
+
+        Observable<Pd_baoxian_get> pd_baoxian_getObservable = PdPerfectHttp.createService(PandingService.class)
+                .pd_baoxian_get(baoxian_param);
+
+        Observable<Pd_vip_get> pd_vip_getObservable = PdPerfectHttp.createService(PandingService.class)
+                .pd_vip_get(vipget_param);
+
+        subscribe = Observable.merge(pd_baoxian_getObservable, pd_vip_getObservable)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Object>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(Object o) {
+                        if (o instanceof Pd_vip_get) {
+                            Pd_vip_get pd_vip_get = (Pd_vip_get) o;
+                            if (pd_vip_get.getErrcode() == 0) {
+                                tvVipPoint.setText(pd_vip_get.getUsePoint());
+                            }
+                        }
+                        if (o instanceof Pd_baoxian_get) {
+                            Pd_baoxian_get pd_baoxian_get = (Pd_baoxian_get) o;
+                            if(pd_baoxian_get.getErrcode()==0){
+                                tvBaodanhao.setText(pd_baoxian_get.getOrderCode());
+                                tvBaoxianend.setText(pd_baoxian_get.getEndDate());
+                                tvBaoxiaostart.setText(pd_baoxian_get.getStartDate());
+                                tvCompany.setText(pd_baoxian_get.getCompany());
+                            }
+
+                        }
+                    }
+                });
+    }
+
+    private void stopInitData(){
+        if (subscribe != null) {
+            if (subscribe != null) {
+                if (!subscribe.isUnsubscribed()) {
+                    subscribe.unsubscribe();
+                }
+            }
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        stopInitData();
         unbinder.unbind();
     }
 }

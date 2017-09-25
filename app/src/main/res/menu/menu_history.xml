@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.suleiman.material.activities.TabsHeaderActivity">
+
+    <item
+        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/action_mgn"
+        android:title="搜索"
+        app:showAsAction="ifRoom" />
+</menu>

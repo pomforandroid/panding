@@ -1,10 +1,31 @@
 <resources>
     <string name="app_name">掌上磐鼎</string>
-    <string name="title_gps">GPS</string>
+    <string name="title_gps">首页</string>
     <string name="title_home">磐鼎服务</string>
     <string name="title_carclub">车友会</string>
     <string name="title_account">我的</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="notifyTitle">提示</string>
+    <string name="notifyMsg">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。</string>
+    <string name="setting">设置</string>
+    <string name="cancel">取消</string>
+    <string name="no_result">没有结果</string>
+
+
+    <string-array name="area">
+
+        <item>江门</item>
+
+        <item>中山 </item>
+
+        <item>顺德</item>
+
+        <item>广州</item>
+
+        <item>佛山</item>
+
+    </string-array>
 </resources>

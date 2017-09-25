@@ -2,20 +2,19 @@
 <tabs>
     <tab
         id="@+id/navigation_gps"
-        icon="@drawable/menu_carclub"
-        title="Favorites" />
+        icon="@drawable/navi_home"
+        />
     <tab
         id="@+id/navigation_home"
-        icon="@drawable/menu_carclub"
-        title="Nearby" />
+        icon="@drawable/navi_panding"
+         />
     <tab
         activeColor="#00000000"
         id="@+id/navigation_carclub"
-        icon="@drawable/lion_head"
-        title="车友会" />
-
+        icon="@drawable/navi_carclub" />
+    <!--activeColor="#00000000"-->
     <tab
         id="@+id/navigation_account"
-        icon="@drawable/menu_carclub"
-        title="Friends" />
+        icon="@drawable/navi_account"
+        />
 </tabs>

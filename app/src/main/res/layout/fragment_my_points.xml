@@ -83,7 +83,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="粤J88888"
+                                android:id="@+id/tv_username"
                                 android:textSize="16sp" />
 
                             <ImageView
@@ -111,11 +111,10 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/textView"
+                                android:id="@+id/tv_vip_point"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="2300"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -148,13 +147,15 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/integral_my"
                         android:text="积分"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/tv_point"
                         android:textColor="@color/colorPrimary"
-                        android:text="2300"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -168,6 +169,8 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/integral_detail"
                         android:text="积分明细"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -183,6 +186,8 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/integra_howl"
                         android:text="积分数据"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

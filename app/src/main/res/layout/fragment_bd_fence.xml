@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <include layout="@layout/toolbar"/>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:id="@+id/rl_backside"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+            <TextView
+                android:layout_centerVertical="true"
+                android:id="@+id/tv_radius"
+                android:layout_marginLeft="16dp"
+                android:text="半径"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <!--<SeekBar
+                android:layout_toLeftOf="@+id/tv_commit"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_radius"
+                style="@android:style/Widget.Holo.SeekBar"
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />-->
+
+            <com.panding.main.customview.MSeekBar
+                android:layout_toLeftOf="@+id/tv_commit"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_radius"
+                style="@android:style/Widget.Holo.SeekBar"
+                app:textBackground="@mipmap/bg_seekbar_display1"
+                android:id="@+id/seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="20000"
+                android:progress="0"
+                android:thumb="@drawable/icon_seekbar_thumb"
+                app:titletextColor="@color/white"
+                app:textOrientation="top"
+                app:textSize="12sp"
+                />
+
+            <TextView
+                android:layout_marginRight="8dp"
+                android:id="@+id/tv_commit"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="提交"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_forward"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+            <com.panding.main.customview.SwitchButton
+                app:titleText="已启用"
+                app:titleTextSize="12sp"
+                app:titleTextColor="@color/white"
+                android:id="@+id/myswitch"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+            </com.panding.main.customview.SwitchButton>
+
+            <Button
+                android:id="@+id/bt_reset"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="重置围栏"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="22dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.baidu.mapapi.map.MapView
+            android:layout_marginTop="16dp"
+            android:id="@+id/bmapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true" />
+
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_gravity="bottom|right"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_reset"
+                android:layout_margin="8dp"
+                android:background="@drawable/resetfence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/iv_delete"
+                android:layout_margin="8dp"
+                android:background="@drawable/deletefence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="24dp"
+            android:id="@+id/linearLayout_se"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="3dp" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="8" >
+
+                <EditText
+                    android:id="@+id/city_search"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    style="@style/secondstyle"
+                    android:gravity="bottom"
+                    android:hint="城市"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/item_DeleteCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/ic_delete_forever"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4" >
+
+                <AutoCompleteTextView
+                    android:id="@+id/add_search"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    style="@style/secondstyle"
+                    android:gravity="bottom"
+                    android:hint="输入地址"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/item_DeleteAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/ic_delete_forever"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <Button
+                android:textColor="@color/white"
+                android:id="@+id/button_search"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="2dip"
+                android:layout_weight="8"
+                android:text="搜索" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

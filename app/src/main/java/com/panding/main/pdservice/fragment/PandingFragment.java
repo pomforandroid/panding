@@ -130,11 +130,10 @@ public class PandingFragment extends BaseContentragment implements ViewPagerEx.O
     }
 
     private void initSlider() {
-        HashMap<String, String> url_maps = new HashMap<String, String>();
-        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
-        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
-        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+        HashMap<String, Integer> url_maps = new HashMap<String, Integer>();
+        url_maps.put("新车上市", R.drawable.lunbo_1);
+        url_maps.put("火爆抢购", R.drawable.lunbo_2);
+
 
         for (String name : url_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(mActivity);

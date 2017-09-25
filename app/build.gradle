@@ -18,6 +18,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        debug {
+            keyAlias 'GDSWZ'
+            keyPassword 'swz2016'
+            storePassword 'swz2016'
+            storeFile file("../Pandingkey.keystore")
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
 }
 
 dependencies {
@@ -26,6 +41,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    compile 'com.borax12.materialdaterangepicker:library:1.9'
+    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    compile 'net.danlew:android.joda:2.9.9'
+    compile 'com.loopeer.library:itemtouchhelperextension:1.0.5'
+    compile 'com.orhanobut:dialogplus:1.11@aar'
+    compile 'cn.pedant.sweetalert:library:1.3'
     compile 'com.roughike:bottom-bar:2.3.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'

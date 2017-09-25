@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+    
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <RadioButton
+            android:id="@+id/rb_step1"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColor="@drawable/radiobutton_text_"
+            android:text="输入手机"
+            android:button="@null"
+            android:background="@drawable/radiobutton_bg_"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:id="@+id/rb_step2"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColor="@drawable/radiobutton_text_"
+            android:text="验证手机"
+            android:button="@null"
+            android:background="@drawable/radiobutton_bg_"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:id="@+id/rb_step3"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:textColorHighlight="@color/colorPrimary"
+            android:textColor="@drawable/radiobutton_text_"
+            android:text="验证成功"
+            android:button="@null"
+            android:background="@drawable/radiobutton_bg_"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </RadioGroup>
+
+    <com.panding.main.customview.NoScrollViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>

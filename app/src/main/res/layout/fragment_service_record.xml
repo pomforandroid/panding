@@ -29,13 +29,17 @@
                     android:paddingTop="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
+                    <LinearLayout
+                        android:background="?attr/selectableItemBackground"
+                        android:id="@+id/goback"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content">
                     <ImageView
                         android:src="@drawable/ic_navi_before"
                         android:layout_marginLeft="8dp"
-                        android:id="@+id/goback"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
+                    </LinearLayout>
                     <ImageView
                         android:layout_marginRight="8dp"
                         android:layout_gravity="right"
@@ -80,10 +84,10 @@
                                 android:text="会员名称:" />
 
                             <TextView
+                                android:id="@+id/tv_username"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="粤J88888"
                                 android:textSize="16sp" />
 
                             <ImageView
@@ -111,11 +115,10 @@
                                 android:text="会员积分:" />
 
                             <TextView
-                                android:id="@+id/textView"
+                                android:id="@+id/tv_vip_point"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="8dp"
-                                android:text="2300"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -180,6 +183,8 @@
                     android:layout_height="match_parent"/>
 
                 <LinearLayout
+                    android:id="@+id/ll_commend"
+                    android:background="?attr/selectableItemBackground"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_weight="1"
@@ -237,16 +242,114 @@
 
         </FrameLayout>
 
-            <android.support.v7.widget.RecyclerView
+           <!-- <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
 
-            </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.RecyclerView>-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/mianbao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ybweixiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/gbbaoyang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/banpen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:visibility="invisible"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/mianbao" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/baoxiu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/qcmeirong"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="invisible"
+                    android:layout_weight="0.5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
-
-
 
 </FrameLayout>

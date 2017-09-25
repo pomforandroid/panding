@@ -5,4 +5,20 @@
         <attr name="tsvtextColor" format="color" />
     </declare-styleable>
 
+
+    <declare-styleable name="MSeekBar">
+        <attr name="textSize" format="dimension" />
+        <attr name="titletextColor" format="color" />
+        <attr name="textBackground" format="reference" />
+        <attr name="textOrientation" format="enum">
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="titleText"  format="string" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="titleTextSize" format="dimension"/>
+    </declare-styleable>
 </resources>

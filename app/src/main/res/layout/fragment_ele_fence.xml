@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView_ele"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:clickable="true" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="3dp" >
+
+                <Button
+                    android:textColor="@color/white"
+                    android:id="@+id/button_clear"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="2dip"
+                    android:layout_weight="1"
+                    android:onClick="SearchButtonProcess"
+                    android:text="清除" />
+
+                <Button
+                    android:textColor="@color/white"
+                    android:id="@+id/button_save"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="2dip"
+                    android:layout_weight="1"
+                    android:text="保存" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout_se"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="3dp" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="8" >
+
+                    <EditText
+                        android:id="@+id/city_search"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        style="@style/firststyle"
+                        android:gravity="bottom"
+                        android:hint="城市"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/item_DeleteCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_delete_forever"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4" >
+
+                    <AutoCompleteTextView
+                        android:id="@+id/add_search"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        style="@style/firststyle"
+                        android:gravity="bottom"
+                        android:hint="输入地址"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/item_DeleteAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/ic_delete_forever"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <Button
+                    android:textColor="@color/white"
+                    android:id="@+id/button_search"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dip"
+                    android:layout_weight="8"
+                    android:text="搜索" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

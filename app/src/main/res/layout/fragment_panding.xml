@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2484"
@@ -19,15 +19,34 @@
             <com.daimajia.slider.library.SliderLayout
                 android:id="@+id/slider"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1930"></LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="374"
+                    android:background="@drawable/pdware"></LinearLayout>-->
+            </LinearLayout>
+
+            <!--<com.daimajia.slider.library.SliderLayout
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1930" />
 
             <LinearLayout
-                android:background="@drawable/pdware"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="374"></LinearLayout>
-        </LinearLayout>
+                android:layout_weight="374"
+                android:background="@drawable/pdware"></LinearLayout>-->
+        </FrameLayout>
 
 
         <LinearLayout
@@ -45,22 +64,23 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:background="@android:drawable/list_selector_background"
                     android:id="@+id/ll_service"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:adjustViewBounds="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/service" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="?attr/selectableItemBackground"
                     android:id="@+id/ll_carecar"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -69,13 +89,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:adjustViewBounds="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/carecar" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="?attr/selectableItemBackground"
                     android:id="@+id/ll_insurance"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -84,13 +105,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:adjustViewBounds="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/insurance" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="?attr/selectableItemBackground"
                     android:id="@+id/ll_adviser"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -99,13 +121,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:adjustViewBounds="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/adviser" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="?attr/selectableItemBackground"
                     android:id="@+id/ll_suggest"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -114,9 +137,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:adjustViewBounds="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:src="@drawable/suggest" />
                 </LinearLayout>
 
@@ -132,13 +155,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp">
 
-                    <TextView
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newcarids" />
+
+                    <!--<TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="新车推介"
                         android:textColor="@color/pdblue"
-                        android:textSize="16sp" />
+                        android:textSize="16sp" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -181,13 +211,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp">
 
-                    <TextView
+                    <!-- <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="活动信息"
                         android:textColor="@color/pdgreen"
                         android:textSize="16sp" />
+-->
+                    <ImageView
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/acitivyinfo" />
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+    <include layout="@layout/toolbar_loc" android:id="@+id/tl"/>
+    <!-- TODO: Update blank fragment layout -->
+    <com.baidu.mapapi.map.MapView
+        android:layout_below="@+id/tl"
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_myloc"
+        android:clickable="true"
+        android:layout_above="@+id/cv_carsearch"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentRight="true"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="3dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp">
+        <ImageView
+            android:id="@+id/tv_myloc"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/myloc_blue"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:clickable="true"
+        android:layout_above="@+id/cv_switch"
+        android:id="@+id/cv_carsearch"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentRight="true"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="3dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp">
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/carsearch_blue"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:clickable="true"
+        android:id="@+id/cv_switch"
+        android:layout_marginBottom="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="3dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp">
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/swichmap_blue"
+            />
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

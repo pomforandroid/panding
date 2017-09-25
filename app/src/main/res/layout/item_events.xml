@@ -8,14 +8,14 @@
     <ImageView
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:src="@drawable/events_rvbg"
+        android:src="@drawable/home_bg1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="乜都系一拳，身边美女无数，玩晒啦"
+        android:text="你和3200元大奖之间只差一张美照"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

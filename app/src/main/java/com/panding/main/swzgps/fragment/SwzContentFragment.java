@@ -64,11 +64,11 @@ public class SwzContentFragment extends BaseContentragment implements OperateBac
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_swz_content, container, false);
-        SwzFragment fragment = new SwzFragment();
+        SwzLoginFragment fragment = new SwzLoginFragment();
         fragment.setOperateBackstackListener(this);
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-        ft.add(R.id.swzcontent,fragment,SwzFragment.class.getName());
-        ft.addToBackStack(SwzFragment.class.getName());
+        ft.add(R.id.swzcontent,fragment,SwzLoginFragment.class.getName());
+        ft.addToBackStack(SwzLoginFragment.class.getName());
         ft.commit();
         return view;
     }
@@ -80,11 +80,20 @@ public class SwzContentFragment extends BaseContentragment implements OperateBac
 
     @Override
     public void pushStack(Fragment fragment) {
-
+        if(fragment instanceof BaseContentragment){
+            ((BaseContentragment)fragment).setOperateBackstackListener(this);
+            FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+            ft.replace(R.id.swzcontent,fragment,fragment.getClass().getName());
+            ft.addToBackStack(fragment.getClass().getName());
+            ft.commit();
+        }else {
+            throw new RuntimeException(mActivity.toString()
+                    + " 你这个fragment继承了BaseContentragment了吗？");
+        }
     }
 
     @Override
     public void popStack() {
-
+        getChildFragmentManager().popBackStack();
     }
 }

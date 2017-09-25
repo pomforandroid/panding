@@ -12,9 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class PerfectHttp {
-    //public static String BASE_URL = "http://sf.swzcn.com/SwzInterface/gps/";
-    //public static String BASE_URL = "http://10.0.3.58/SwzInterface/gps/";
-    public static String BASE_URL = "http://wxsrv.swzcn.com/SwzInterface/gps/";
+    public static String BASE_URL = "";
 
     //public static String BASE_URL = "http://10.10.2.151:8080/SwzInterface/gps/";
 
