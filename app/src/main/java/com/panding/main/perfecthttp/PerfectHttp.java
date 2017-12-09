@@ -14,8 +14,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PerfectHttp {
     public static String BASE_URL = "";
 
-    //public static String BASE_URL = "http://10.10.2.151:8080/SwzInterface/gps/";
-
     //设置60read秒超时 10秒连接超时
     private static OkHttpClient okHttpClient = new OkHttpClient.Builder()
             .readTimeout(60, TimeUnit.SECONDS)
